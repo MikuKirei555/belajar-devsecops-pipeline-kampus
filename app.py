@@ -60,23 +60,7 @@ def index():
 @app.route("/mahasiswa", methods=["GET"])
 def mahasiswa():
     """Return student information using an intentionally unsafe shell command."""
-    nama = request.args.get("nama", "")
-
-    command = f"echo Mahasiswa: {nama}"
-
-    result = subprocess.run(
-        command,
-        shell=True,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-
-    return {
-        "status": "success",
-        "output": result.stdout.strip(),
-    }
-
+    return "fitur mahasiswa sudah jadi"
 
 if __name__ == "__main__":
     init_db()
